@@ -8,14 +8,41 @@ Inside the class, there is an integer variable myNum and a string variable myStr
 At last, end the class definition with a semicolon ;.
 */
 // Create a Car class with some attributes
-class Car {
-  public:
-    string brand;   
-    string model;
-    int year;
-};
+class Car
+{
+public:
+  string brand;
+  string model;
+  int year;
+  // we define a function inside the class
+  void myMethod()
+  { // Method/function defined inside the class
+    cout << "Hello World!";
+  }
 
-int main() {
+  /*
+    If we declare a method inside the class we do it as the above example.
+    if we wanna declare it outside, we do it as the below example.
+    To define a function outside the class definition, you have to declare it inside the class and then define it outside of the class.
+    This is done by specifying the name of the class, followed the scope resolution :: operator, followed by the name of the function:
+  */
+  void myMethod1(); // Method/function declaration
+  int speed(int maxSpeed);
+
+
+};
+// Method/function definition outside the class.
+void Car::myMethod1()
+{
+  cout << "Hello people!";
+}
+
+int Car::speed(int maxSpeed){
+  return maxSpeed;
+}
+
+int main()
+{
   // Create an object of Car
   Car carObj1;
   carObj1.brand = "BMW";
@@ -32,15 +59,10 @@ int main() {
   cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
   cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
 
+  // calling the 2 methods we created earlier.
+  carObj1.myMethod1();
+  carObj2.myMethod();
+  cout << carObj1.speed(200)<< " Is your max speed.\n";
 
-
-
-
-
-
-
-
-
-  
   return 0;
 }
