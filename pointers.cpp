@@ -25,8 +25,16 @@ int main() {
 
   cout << ptr1 << "\t is the address\n ";
   cout << *ptr1 << "\t is the value. \n";
+  // You can also change the pointer's value. But note that this will also change the value of the original variable:
 
+    // Change the value of the pointer
+    *ptr = "Hamburger";
 
+    // Output the new value of the pointer (Hamburger)
+    cout << *ptr << "\n";
+
+    // Output the new value of the food variable (Hamburger)
+    cout << food << "\n";
 
   return 0;
 }
