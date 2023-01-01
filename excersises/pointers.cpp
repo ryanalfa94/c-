@@ -48,6 +48,7 @@ Sample Output
 
 void update(int *a,int *b) {
     // Complete this function   
+    // store the values in temperers variables
      int temp_A = *a;
      int temp_b =*b;
      
